@@ -122,8 +122,8 @@ class DCGAN():
         
         #p_real = tf.clip_by_value(p_real,0.5,1.0)
         #p_gen = tf.clip_by_value(p_gen,1e-10,0.7)
-        discrim_cost_real = bce(p_real, tf.ones_like(p_real))
-        discrim_cost_gen = bce(p_gen, tf.zeros_like(p_gen))
+        ###discrim_cost_real = bce(p_real, tf.ones_like(p_real))
+        #####discrim_cost_gen = bce(p_gen, tf.zeros_like(p_gen))
         
         ###discrim_cost = tf.reduce_mean(discrim_cost_real) + tf.reduce_mean(discrim_cost_gen)
         
@@ -140,19 +140,19 @@ class DCGAN():
         ###p_gen = p_gen/(1-p_gen)
         ###gen_cost = -tf.log(
         ###gen_cost = -tf.reduce_mean(tf.log(1e-7+p_gen)/(1+tf.log(1e-7+p_gen)))
-        ###gen_cost = tf.reduce_mean(tf.square(p_gen-1))
+        gen_cost = tf.reduce_mean(tf.square(p_gen-1))
         ###gen_cost = tf.reduce_mean(tf.square(p_gen))
         ###gen_cost = tf.reduce_mean(tf.square(p_gen)-tf.square(p_gen))
         #gen_cost = tf.reduce_mean(tf.sqrt(p_gen)-1)
         ###gen_cost = tf.reduce_mean((p_gen-1)*(p_gen-1))
-        gen_cost = tf.reduce_mean(-p_gen*p_gen)
+        ###gen_cost = tf.reduce_mean(-p_gen*p_gen)
         ###hey = p_gen/(1-p_gen)
         ###gen_cost = -tf.reduce_mean(-p_gen)
         ###gen_cost = -tf.reduce_mean(hey*hey)
         ###gen_cost = tf.reduce_mean(p_gen*tf.log(p_gen+p_real))
         ##gen_cost = tf.reduce_mean(-0.5*tf.reduce_mean(p_gen*p_gen)-0.5*tf.reduce_mean(p_real*p_real)))
         ###gen_cost = tf.reduce_mean(p_gen*tf.log(p_gen)-p_gen+1)
-        gen_cost = tf.reduce_mean(-p_gen)
+        ####gen_cost = tf.reduce_mean(-p_gen)
         ###gen_cost = tf.reduce_mean(bce( p_gen, tf.ones_like(p_gen) ))
         ###hey = p_gen/(1-p_gen)
         ###gen_cost = tf.reduce_mean(-tf.log(1e-7+hey))
