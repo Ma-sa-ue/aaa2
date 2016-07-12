@@ -117,10 +117,10 @@ for epoch in range(n_epochs):
                         Z_tf_sample:Z_np_sample
                         })
             #####generated_samples = (generated_samples + 1.)/2.
-            save_visualization(generated_samples, (14,14), save_path='./vis10_4/sample_'+str(iterations/500)+'.jpg')
+            save_visualization(generated_samples, (14,14), save_path='./vis10_5/sample_'+str(iterations/500)+'.jpg')
         if np.mod(iterations, 500) == 0:    
-            np.save("./vis10_4/array1_"+str(iterations/500),np.array(p_gen_list))
-            np.save("./vis10_4/array2_"+str(iterations/500),np.array(p_val_list))
-            np.save("./vis10_4/array3_"+str(iterations/500),np.array(loss_list))
+            np.save("./vis10_5/array1_"+str(iterations/500),np.array(p_gen_list))
+            np.save("./vis10_5/array2_"+str(iterations/500),np.array(p_val_list))
+            np.save("./vis10_5/array3_"+str(iterations/500),np.array(loss_list))
         iterations += 1
         
